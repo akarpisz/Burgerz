@@ -29,6 +29,7 @@ const convToSql = (object) => {
         arr.push(key + "=" + value);
       }
     }
+    return arr;
 }
 
 const orm = {
@@ -45,11 +46,11 @@ const orm = {
     },
     insertOne: function(table, columns, values, cb){
         let q = "INSERT INTO " + table; 
-        q+= " (";
-        q+= columns.toString(); 
-        q+= ") VALUES (";
-        q+= qMarks(values.length) 
-        q+=")";
+        q += " (";
+        q += columns.toString(); 
+        q += ") VALUES (";
+        q += qMarks(values.length) 
+        q += ")";
         console.log(q);
         
         conn.query(q, function(err, result){
@@ -62,7 +63,7 @@ const orm = {
     },
     updateOne: function(table, columnValuesObj, condition, cb){
         let q = "UPDATE " + table + " SET ";
-        q += convToSql(columnValuesObj);
+        q += convToSql(columnValuesObj).toString();
         q += " WHERE " + condition +";";
         
         console.log(q);
