@@ -3,7 +3,7 @@ const conn = require("./connection.js");
 
 
 const qMarks = (count) => {
-    var arr = [];
+    const arr = [];
   
     for (var i = 0; i < count; i++) {
       arr.push("?");
@@ -13,7 +13,7 @@ const qMarks = (count) => {
   };
 
 const convToSql = (object) => {
-    var arr = [];
+    const arr = [];
   
     // loop through the keys and push the key/value as a string int arr
     for (var key in object) {
@@ -44,12 +44,15 @@ const orm = {
         });
     },
     insertOne: function(table, columns, values, cb){
-        let q = "INSERT INTO " + table + "(" ;
-        q+= columns.toString() + ") VALUES (";
-        q+= qMarks(values.length) + ") ";
+        let q = "INSERT INTO " + table; 
+        q+= " (";
+        q+= columns.toString(); 
+        q+= ") VALUES (";
+        q+= qMarks(values.length) 
+        q+=")";
         console.log(q);
         
-        conn.query(q, (err, result) => {
+        conn.query(q, function(err, result){
             if (err) {
                 throw err;
             }
@@ -64,7 +67,7 @@ const orm = {
         
         console.log(q);
         
-        conn.query(q, (err,result) => {
+        conn.query(q, function(err,result){
             if (err) {
                 throw err;
             }

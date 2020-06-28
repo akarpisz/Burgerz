@@ -9,7 +9,10 @@ const conn = mysql.createConnection({
 });
 
 conn.connect((err)=>{
-    console.log(`Connected on port ${conn.port}`);
+    if (err) {
+        throw err;
+    }
+    console.log(`Connected on port ${conn.config.port}`);
 })
 
 module.exports = conn;

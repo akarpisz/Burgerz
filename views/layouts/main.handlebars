@@ -8,24 +8,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../../public/assets/css/style.css">
-    <script href="https://code.jquery.com/jquery-3.5.1.js"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="jumbotron text-center col-md-12">
-                <p>EAT THAT BURGER!</p>
+                <h2>EAT THAT BURGER!</h2>
                 <img id="burger" src="https://image.flaticon.com/icons/svg/3075/3075977.svg" />
             </div>
         </div>
         <div class="row">
             {{{ body }}}
         </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <form class="add-burger">
+                    <label for="burger">Burger</label>
+                    <input type="text" id="burger" name="burger">
+                    <button type="submit" class="btn btn-primary">Add Da Burger</button>
+                </form>
+            </div>
+        </div>
         <footer>
             &copy; 2020 Andrew A.K.
         </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="../../public/assets/js/burgers.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,19 @@
+<div class="col-md-6 col-sm-12">
+    <ul>
+        {{#each burger}}
+        {{#unless devoured}}
+        {{> burgers/b-block devoured=false}}
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>
+<div class="col-md-6 col-sm-12">
+    <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        {{> burgers/b-block devoured=true}}
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
