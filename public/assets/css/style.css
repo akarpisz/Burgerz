@@ -11,6 +11,9 @@ color: white;
 .jumbotron {
     height: 200px;
     background-color: #359b50;
+    border-color: yellow;
+    border-width: .25em;
+    border-style: double;
 }
 #burger{
     width:50%;
