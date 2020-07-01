@@ -9,7 +9,8 @@ const conn = mysql.createConnection({
   host     : 'us-cdbr-east-02.cleardb.com',
   user     : 'bd63f616e45530',
   password : 'd4f09c32',
-  database : 'heroku_f5d05644ad099ad'
+  database : 'heroku_f5d05644ad099ad',
+  port: process.env.PORT
 });
 
 conn.connect((err) => {
