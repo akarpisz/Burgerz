@@ -1,16 +1,17 @@
 const mysql = require("mysql");
 
-
-const conn = mysql.createConnection({
-    CLEARDB_DATABASE_URL: "mysql://bd63f616e45530:d4f09c32@us-cdbr-east-02.cleardb.com/heroku_f5d05644ad099ad?reconnect=true",
-});
-
-// const conn = mysql.createConnection({
-//   host     : 'us-cdbr-east-02.cleardb.com',
-//   user     : 'bd63f616e45530',
-//   password : 'd4f09c32',
-//   database : 'heroku_f5d05644ad099ad'
-// });
+if (process.env.JAWSDB_URL) {
+  const conn = mysql.createConnection_process.env.JAWSDB_URL
+}
+else {
+  const conn = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Biggie92#@!*",
+    port: 3306,
+    database: "burgers_db"
+  })
+}
 
 conn.connect((err) => {
   if (err) {
